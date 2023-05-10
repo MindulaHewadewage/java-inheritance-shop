@@ -2,21 +2,21 @@ package org.java.inheritance;
 
 public class Smarthpone extends Prodotto{
 	
-	private int imei;
+	private String imei;
 	private int memory;
 
-	public Smarthpone(int code, String nome, double price, int iva, int imei,int memory) {
-		super(code, nome, price, iva);
+	public Smarthpone(int code, String nome,String brand, int price, int iva, String imei,int memory) {
+		super(code, nome,brand, price, iva);
 		
 		setImei(imei);
 		setMemory(memory);
 	}
 
-	public int getImei() {
+	public String getImei() {
 		return imei;
 	}
 
-	public void setImei(int imei) {
+	public void setImei(String imei) {
 		this.imei = imei;
 	}
 
@@ -30,8 +30,9 @@ public class Smarthpone extends Prodotto{
 	
 	@Override
 	public String toString() {
-		return "[" + getImei() + "]"
-		+"\n" + getMemory();
+		return "(S)" + getProductStr()
+		+ "\nimei:" + getImei()
+		+"\nmemory:" + getMemory();
 	}
 	
 	
